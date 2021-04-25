@@ -3,7 +3,57 @@ const BASE_URL = "https://api.lyrics.ovh";
 
 const form = document.getElementById('form');
 const search = document.getElementById('search');
-const result = document.getElementById('result')
+const result = document.getElementById('result');
+
+// create search function returns object of arrays
+function searchSongs(term) {
+  
+  const url = (`${BASE_URL}/suggest/${term}`)
+  fetch(url)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  
+      showData(data);
+
+}
+// Showing the Song and Artist/Group in the Dom
+
+function showData(data) {
+  console.log(data);
+  let output = '';
+  data.data.forEach(song => {
+    output += `
+    <li>
+    <span><strong>${song.artist.name}</strong> - ${song.title}</span>
+    <button class="btn" data-artist="${song.artist.name}" 
+    data-title="${song.title}">Get Lyrics</button>
+    </li>
+    `;
+
+  });
+
+  result.innerHTML = `
+  <ul class="songs">
+  ${output}
+  </ul>
+  
+  `;
+}
+
+// Creating an Event Listener for the form
+form.addEventListener('submit', e => {
+  e.preventDefault();
+
+  const searchTerm = search.value.trim();
+
+  if(!searchTerm) {
+    alert('Please Type your search request! ');
+  }
+  else {
+    searchSongs(searchTerm);
+  }
+
+});
 
 // function getArtistandSong(artist, title) {
   
@@ -13,50 +63,7 @@ const result = document.getElementById('result')
 //           .then(res => res.json())
      
 
-// create search function returns object of arrays
-  function searchSong(term) {
-  
-    const url = (`${BASE_URL}/suggest/${term}`)
-    fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data));
-    
-        showData(data);
-  
-}
-// Showing the Song and Artist/Group in the Dom
 
-function showData(data) {
-  let output = '';
-  data.data.forEach(song => {
-    output += `
-    <li><span><strong>${song.artist.name}</strong> - ${song.title}</span>
-    <button class="btn" data-artist="${song.artist.name}" data-title="${song.title}">Get Lyrics</button>
-    </li>
-    `;
-
-  });
-  result.innerHTML = `
-  <ul class="songs">
-  ${output}
-  </ul>
-  
-  `;
-}
-// Creating an Event Listner for the form
-form.addEventListener('submit', e => {
-  e.preventDefault();
-
-  const searchTerm = search.value.trim();
-
-  if(!searchTerm) {
-    alert('Please Type your search request! ');
-  }
-  else{
-    searchSong(searchTerm);
-  }
-
-});
 
 // function getArtistandSong() {
  
