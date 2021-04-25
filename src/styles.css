@@ -79,10 +79,23 @@ form button {
     padding: 4px 10px;
 
 }
+
+.card {
+    margin: 30px auto;
+    max-width:  100%;
+    width: 500px;
+}
+
+.card h2 {
+    font-weight: 300;
+}
+
+.card p {
+    text-align: center;
+}
 ul.songs {
     list-style-type: none;
     padding: 0;
-
 }
 
 ul.songs li {
@@ -99,7 +112,7 @@ ul.songs li {
     width: 500px;
 }
 
-.container h3 {
+.container h2 {
     font-weight: 300;
 }
 
