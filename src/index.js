@@ -12,14 +12,35 @@ const result = document.getElementById('result')
 //       return fetch(url)
 //           .then(res => res.json())
      
-//   };
+
+// create search function returns object of arrays
   function searchSong(term) {
   
     const url = (`${BASE_URL}/suggest/${term}`)
     fetch(url)
         .then(res => res.json())
         .then(data => console.log(data));
-   
+        
+  
+};
+// Showing the Song and Artist/Group in the Dom
+
+function showData(data) {
+  let output = '';
+  data.data.forEach(song => {
+    output += `
+    <li><span><strong>${song.artist.name}</strong> - ${song.title}</span>
+    <button class="btn" data-artist="${song.artist.name}" data-title="${song.title}">Get Lyrics</button>
+    </li>
+    `;
+
+  });
+  result.innerHTML = `
+  <ul class="songs">
+  ${output}
+  </ul>
+  
+  `;
 }
 // Creating an Event Listner for the form
 form.addEventListener('submit', e => {
