@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>DON'T FORGET THE LYRICS</title>
+   <title>JUST LIKE MUSIC-LYRIC FINDER</title>
    <link rel="stylesheet" href="src/styles.css" />
-    <script defer src="src/index.js"></script>
-  
+
 </head>
 <body>
   <div class="container">
@@ -21,29 +20,23 @@
     </p>
     
     <h3>
-        Just Type in the name of the group/artist followed by the name of the song, hit  and voila' the lyrics are right at your fingertips!
+        Type in the name of the group or artist followed by the name of the song, hit "Submit Your Search" and voila' the lyrics are right at your fingertips!
     </h3>
+    <p><e>*Disclaimer: Not every song ever written and sung by every artist or group will be listed, but keep searching; new lyrics are uploaded regulary.</e></p>
     </div>
 
+  <header>
+    <h1>Find Lyrics</h1>
+    <form id="form">
+      <input type="text" id="search" autofocus="autofocus" placeholder="Type Artist/Group + Song...">
+      <button>Submit Your Search</button>
+    </form>
+  </header>
+  <div id="result" class="container">
+  <p>Cooking up Your Lyrics! They will Appear Below!</p>
+  </div>
    
-    <div class="search">
-      <input type="text" name="song" class="search-song" placeholder="Type the Artist Name & Song you want the lyrics to" id="search-input" />
-      <ul class="results" id="results">
-    </ul>
-    </div>
 
-    <div class="container2">
-      <h2>Your Lyrics arrived!</h2>
-      <li>
-
-      </li>
-    </div>
-
-    <div class="lyrics" id="lyrics">
-    </div>
-
- 
-
-    
+  <script defer src="src/index.js"></script>
 </body>
 </html>
