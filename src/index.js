@@ -13,7 +13,7 @@ function searchSongs(term) {
       .then(res => res.json())
       .then(data => console.log(data));
   
-      showData(data);
+      
 
 }
 // Showing the Song and Artist/Group in the Dom
@@ -55,6 +55,11 @@ form.addEventListener('submit', e => {
 
 });
 
+// Creating Event Listener for get lyrics link
+
+result.addEventListener('click', e => {
+console.log(e.target);
+});
 // function getArtistandSong(artist, title) {
   
   
