@@ -19,7 +19,13 @@ form.addEventListener('submit', e => {
   e.preventDefault();
 
   const searchTerm = search.value.trim();
-  console.log(searchTerm);
+
+  if(!searchTerm) {
+    alert('Please Type your search request! ');
+  }
+  else{
+    searchSong(searchTerm);
+  }
 
 });
 
