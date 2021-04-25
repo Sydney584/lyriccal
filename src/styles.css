@@ -30,4 +30,21 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 100px 0;
+    position: relative;
+}
+
+header h1 {
+    margin: 0 0 30px;
+}
+
+header h2 {
+    margin-bottom: 0 0 10px;
+}
+
+form {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+
 }
