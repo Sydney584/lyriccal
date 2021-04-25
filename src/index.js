@@ -20,9 +20,10 @@ const result = document.getElementById('result')
     fetch(url)
         .then(res => res.json())
         .then(data => console.log(data));
-        
+    
+        showData(data);
   
-};
+}
 // Showing the Song and Artist/Group in the Dom
 
 function showData(data) {
