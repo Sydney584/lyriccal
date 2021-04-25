@@ -1,7 +1,9 @@
 // getting data
 const BASE_URL = "https://api.lyrics.ovh";
 
-const form = document.getElementById('');
+const form = document.getElementById('form');
+const search = document.getElementById('search');
+const result = document.getElementById('result')
 
 function getArtistandSong(artist, title) {
   
