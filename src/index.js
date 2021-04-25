@@ -53,13 +53,20 @@ form.addEventListener('submit', e => {
 
 });
 
-// Creating Event Listener for get lyrics link
+// Creating Event Listener for get lyrics link to show lyrics
 
-// result.addEventListener('click', e => {
-// const clickedEl = e.target;
-// if (clickedEl)
-// });
-// // function getArtistandSong(artist, title) {
+result.addEventListener('click', e => {
+const clickedEl = e.target;
+
+if (clickedEl.tagName === 'Button') {
+  const artist = clickedEl.getAttribute('data-artist');
+  const songTitle = clickedEl.getAttribute('data-songtitle');
+
+  getLyrics(artist, songTitle);
+  
+}
+});
+// function getArtistandSong(artist, title) {
   
   
 //       const url = `${BASE_URL}/v1/${artist}/${title}`;
