@@ -5,15 +5,22 @@ const form = document.getElementById('form');
 const search = document.getElementById('search');
 const result = document.getElementById('result')
 
-function getArtistandSong(artist, title) {
+// function getArtistandSong(artist, title) {
   
   
-      const url = `${BASE_URL}/v1/${artist}/${title}`;
-      return fetch(url)
-          .then(res => res.json())
+//       const url = `${BASE_URL}/v1/${artist}/${title}`;
+//       return fetch(url)
+//           .then(res => res.json())
      
-  };
+//   };
+  function searchSong(term) {
   
+    const url = (`${BASE_URL}/suggest/${term}`)
+    fetch(url)
+        .then(res => res.json())
+        .then(data => console.log(data));
+   
+}
 // Creating an Event Listner for the form
 form.addEventListener('submit', e => {
   e.preventDefault();
