@@ -1,30 +1,17 @@
 // getting data
-const BASE_URL = "https://api.lyrics.ovh";
-
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 const result = document.getElementById("result");
 
+const BASE_URL = 'https://api.lyrics.ovh';
 // create search function returns object of arrays
 async function searchSongs(term) {
   const res = await fetch(`${BASE_URL}/suggest/${term}`);
   const data = await res.json();
   
   showData(data);
-};
-
-// Create getLyrics for song function to display lyrics to DOM
-async function getLyrics(artist, songTitle) {
-  const res = await fetch(`${BASE_URL}${artist}/${songTitle}`);
-  const data = await res.json();
-
-const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
-
-    result.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
-    <span>${lyrics}</span>`;
 }
 // Showing the Song and Artist/Group in the Dom
-
 function showData(data) {
   let output = '';
 
@@ -47,6 +34,16 @@ function showData(data) {
   
   `;
 }
+// Create getLyrics for song function to display lyrics to DOM
+async function getLyrics(artist, songTitle) {
+  const res = await fetch(`${BASE_URL}/v1/${artist}/${songTitle}`);
+  const data = await res.json();
+
+  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+
+    result.innerHTML = `<h2><strong>${artist}</strong> - ${songTitle}</h2>
+    <span>${lyrics}</span>`;
+}
 
 // Creating an Event Listener for the form
 form.addEventListener('submit', e => {
@@ -63,6 +60,8 @@ form.addEventListener('submit', e => {
 
 });
 
+
+
 // Creating Event Listener for get lyrics link to show lyrics
 
 result.addEventListener('click', e => {
@@ -70,7 +69,7 @@ result.addEventListener('click', e => {
 
   if (clickedEl.tagName === 'BUTTON') {
     const artist = clickedEl.getAttribute('data-artist');
-    const songTitle = clickedEl.getAttribute('data-title');
+    const songTitle = clickedEl.getAttribute('data-songtitle');
     
     getLyrics(artist, songTitle);
   }
