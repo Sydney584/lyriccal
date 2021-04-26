@@ -12,5 +12,7 @@ Stretch Goals:
 1. Add a Like Button
 2. A drop down menu of suggestions for their query search.
 3. Add photo of artist or album to populate in addition to the lyrics. 
+5. Add another fetch to get even more suggestions to load on the page. 
+6. Add additional styling to make the page more dynamic.
 
 
