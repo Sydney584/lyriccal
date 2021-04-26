@@ -13,6 +13,14 @@ async function searchSongs(term) {
   showData(data);
 
 }
+
+// Create getLyrics for song function to display lyrics to DOM
+async function getLyrics(artist, songTitle) {
+  const res = await fetch(`${BASE_URL}v1/${artist}/${songTitle}`);
+  const data = await res.json();
+  const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
+  
+}
 // Showing the Song and Artist/Group in the Dom
 
 function showData(data) {
@@ -63,7 +71,7 @@ if (clickedEl.tagName === 'Button') {
   const songTitle = clickedEl.getAttribute('data-songtitle');
 
   getLyrics(artist, songTitle);
-  
+
 }
 });
 // function getArtistandSong(artist, title) {
