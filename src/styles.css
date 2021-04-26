@@ -70,7 +70,20 @@ form button {
     padding: 13px 20px;
 
 }
+.card {
+    margin: 30px auto;
+    max-width:  100%;
+    width: 500px;
+}
 
+.card h2 {
+    font-weight: 300;
+}
+
+.card p {
+    text-align: center;
+    text-justify: auto;
+}
 .btn {
     background-color: orange;
     border: 2;
@@ -110,4 +123,10 @@ ul.songs li {
     display: flex;
     justify-content: center;
 
+}
+
+.parentDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
