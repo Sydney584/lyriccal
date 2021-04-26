@@ -6,6 +6,8 @@ MVP Goals:
 
 4. Add Event listener to let user know if they didn't type anything in the field upon clicking the submit button.
 
+5. Create instructions on how to use the page.
+
 Stretch Goals:
 1. Add a Like Button
 2. A drop down menu of suggestions for their query search.
